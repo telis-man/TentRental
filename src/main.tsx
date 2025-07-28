@@ -5,7 +5,7 @@ import { store } from './store.ts';
 import { ErrorBoundary } from 'react-error-boundary';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createRouter } from '@tanstack/react-router';
-
+import './i18n';
 // Import the generated route tree
 import { routeTree } from './routeTree.gen';
 
