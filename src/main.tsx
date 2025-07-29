@@ -8,6 +8,9 @@ import { RouterProvider, createRouter } from '@tanstack/react-router';
 import './i18n';
 // Import the generated route tree
 import { routeTree } from './routeTree.gen';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 // Create a new router instance
 const router = createRouter({ routeTree });
@@ -25,10 +28,12 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <ErrorBoundary fallback={<div>Something went wrong.</div>}>
-        <Provider store={store}>
-          <RouterProvider router={router} />
-        </Provider>
+      <ErrorBoundary fallback={<div>Something went wrong. Root querry</div>}>
+        <QueryClientProvider client={queryClient}>
+          <Provider store={store}>
+            <RouterProvider router={router} />
+          </Provider>
+        </QueryClientProvider>
       </ErrorBoundary>
     </StrictMode>
   );
