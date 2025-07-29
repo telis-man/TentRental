@@ -1,15 +1,14 @@
 // import React from 'react';
 
 import { Link } from '@tanstack/react-router';
-import { t } from 'i18next';
-import i18n from 'i18next';
-import { Button } from '@/components/ui/button';
+
+import { useTranslation } from 'react-i18next';
+
+import LanguageSelect from '@/components/LanguageSelect';
 
 function NavBar() {
-  const changeLanguage = (lang: string) => {
-    console.log(i18n.language);
-    i18n.changeLanguage(lang);
-  };
+  const { t } = useTranslation();
+
   return (
     <div>
       <Link to="/" className="[&.active]:font-bold">
@@ -18,7 +17,7 @@ function NavBar() {
       <Link to="/about" className="[&.active]:font-bold">
         {t('about')}
       </Link>
-      <Button onClick={() => changeLanguage('en')}>Lng</Button>
+      <LanguageSelect />
     </div>
   );
 }
