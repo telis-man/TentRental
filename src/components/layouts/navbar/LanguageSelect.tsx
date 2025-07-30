@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select';
 import { Globe } from 'lucide-react';
 
-export const LanguageSelect = () => {
+const LanguageSelect = () => {
   const { t } = useTranslation();
   const languages = i18n.options.resources ? Object.keys(i18n.options.resources) : [];
 
@@ -29,3 +29,5 @@ export const LanguageSelect = () => {
     </Select>
   );
 };
+
+export default LanguageSelect;

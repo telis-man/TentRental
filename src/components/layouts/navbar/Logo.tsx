@@ -1,7 +1,7 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 
-export const Logo = () => {
-  const API_ENDPOINT_URL = 'http://localhost:3000/logo1';
+const Logo = () => {
+  const API_ENDPOINT_URL = 'http://localhost:3000/logoImage';
 
   interface responseType {
     logoUrl: string;
@@ -18,5 +18,7 @@ export const Logo = () => {
     queryFn: fetchLogo,
   });
 
-  return <img src={data.logoUrl} alt="Galampis logo" className="h-10" />;
+  return <img src={data.logoUrl} alt="Galampis logo" className="h-15" />;
 };
+
+export default Logo;
