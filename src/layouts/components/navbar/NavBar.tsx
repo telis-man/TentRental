@@ -1,14 +1,14 @@
 // import React from 'react';
 
-import LanguageSelect from './LanguageSelect';
-import Logo from './Logo';
 import { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
-import NavBarMenu from './NavBarMenu';
+import NavBarMenu from '../../../layouts/components/navbar/NavBarMenu';
+import LanguageSelect from './LanguageSelect';
+import Logo from './Logo';
 
 function NavBar() {
   return (
-    <div className="flex items-center justify-between w-full mx-4">
+    <div className="flex items-center justify-between w-full px-4">
       <ErrorBoundary fallback={<div>Something went wrong while loading the logo.</div>}>
         <Suspense fallback={<div>Loading logo...</div>}>
           <Logo />

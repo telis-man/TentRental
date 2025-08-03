@@ -1,9 +1,11 @@
+@import './assets/fonts/styles/F37Judge.css';
 @import 'tailwindcss';
-@import "tw-animate-css";
-
+@import 'tw-animate-css';
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-sans: 'F37 Judge', sans-serif;
+  /* --font-f37judge: F37 Judge Extended, 'sans-serif'; */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

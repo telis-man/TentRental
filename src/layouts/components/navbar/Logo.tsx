@@ -1,4 +1,5 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
+import { Link } from '@tanstack/react-router';
 
 const Logo = () => {
   const API_ENDPOINT_URL = 'http://localhost:3000/logoImage';
@@ -18,7 +19,11 @@ const Logo = () => {
     queryFn: fetchLogo,
   });
 
-  return <img src={data.logoUrl} alt="Galampis logo" className="h-15" />;
+  return (
+    <Link to="/" className="[&.active]:font-bold">
+      <img src={data.logoUrl} alt="Galampis logo" className="h-15" />
+    </Link>
+  );
 };
 
 export default Logo;
