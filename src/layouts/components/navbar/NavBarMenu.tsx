@@ -19,12 +19,12 @@ const NavBarMenu = () => {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuLink>
-            <Link to="/" className="[&.active]:font-bold">
+            <Link to="/" className="[&.active]:font-bold tracking-wide">
               {t('home')}
             </Link>
           </NavigationMenuLink>
           <NavigationMenuLink>
-            <Link to="/about" className="[&.active]:font-bold">
+            <Link to="/about" className="[&.active]:font-bold tracking-wide">
               {t('about')}
             </Link>
           </NavigationMenuLink>
