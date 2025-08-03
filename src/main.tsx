@@ -9,6 +9,7 @@ import './i18n';
 // Import the generated route tree
 import { routeTree } from './routeTree.gen';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ThemeProvider } from './components/theme-provider.tsx';
 
 const queryClient = new QueryClient();
 
@@ -29,11 +30,13 @@ if (!rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <ErrorBoundary fallback={<div>Something went wrong. Root querry</div>}>
-        <QueryClientProvider client={queryClient}>
-          <Provider store={store}>
-            <RouterProvider router={router} />
-          </Provider>
-        </QueryClientProvider>
+        <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+          <QueryClientProvider client={queryClient}>
+            <Provider store={store}>
+              <RouterProvider router={router} />
+            </Provider>
+          </QueryClientProvider>
+        </ThemeProvider>
       </ErrorBoundary>
     </StrictMode>
   );

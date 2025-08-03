@@ -1,5 +1,6 @@
 @import './assets/fonts/styles/F37Judge.css';
 @import 'tailwindcss';
+
 @import 'tw-animate-css';
 @custom-variant dark (&:is(.dark *));
 

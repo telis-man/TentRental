@@ -13,9 +13,9 @@ const LanguageSelect = () => {
 
   return (
     <Select value={i18n.language} onValueChange={handleChange}>
-      <SelectTrigger>
+      <SelectTrigger variant="light">
         <div className="flex items-center gap-2">
-          <Globe className="h-4 w-4" />
+          <Globe className="h-4 w-4 text-white" />
           {t(i18n.language)}
         </div>
       </SelectTrigger>
