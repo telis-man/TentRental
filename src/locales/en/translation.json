@@ -2,5 +2,9 @@
   "home": "Home",
   "about": "About",
   "lt": "LT",
-  "en": "EN"
+  "en": "EN",
+  "for_adventure": "Adventure",
+  "for_event": "Event",
+  "for_camping": "Camping",
+  "glampis": "glampis"
 }

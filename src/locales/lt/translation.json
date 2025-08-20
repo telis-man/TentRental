@@ -2,5 +2,9 @@
   "home": "Pagrindinis",
   "about": "Apie mus",
   "lt": "LT",
-  "en": "EN"
+  "en": "EN",
+  "for_adventure": "Nuotykiui",
+  "for_event": "Šventei",
+  "for_camping": "Stovyklavimui",
+  "glampis": "glampis"
 }

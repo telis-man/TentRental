@@ -30,7 +30,7 @@ if (!rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <ErrorBoundary fallback={<div>Something went wrong. Root querry</div>}>
-        <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
           <QueryClientProvider client={queryClient}>
             <Provider store={store}>
               <RouterProvider router={router} />

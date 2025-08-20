@@ -3,16 +3,17 @@ import { fetchJson } from '@/api/client';
 
 interface ImageUrl {
   bannerUrl: string;
+  blurHash: string;
 }
 
-async function getBannerImage(): Promise<ImageUrl> {
-  return fetchJson('bannerImage');
+async function getBackgroundImage(): Promise<ImageUrl> {
+  return fetchJson('backgroundImage');
 }
 
 export function useBackgroundImage() {
   return useSuspenseQuery({
-    queryKey: ['bannerImage'],
-    queryFn: getBannerImage,
+    queryKey: ['backgroundImage'],
+    queryFn: getBackgroundImage,
     staleTime: Infinity,
   });
 }
