@@ -17,7 +17,7 @@ export default function BackgroundImage({ children }: BannerContentProps) {
   }, [data.bannerUrl]);
 
   return (
-    <div className="relative w-full h-[calc(100vh-80px)] overflow-hidden">
+    <div className="relative w-full h-[calc(100vh-var(--navbar-height))] overflow-hidden">
       {/* Banner image */}
       <img
         src={data.bannerUrl}

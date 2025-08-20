@@ -7,12 +7,17 @@ interface BannerContentProps {
 }
 
 export default function BackgroundImageContent({ children }: BannerContentProps) {
-  // const
   return (
     <Suspense
-      fallback={<div className=" h-[calc(100vh-80px)] blur-2xl animate-pulse">{children}</div>}
+      fallback={
+        <div className=" h-[calc(100vh-var(--navbar-height))] blur-2xl animate-pulse">
+          {children}
+        </div>
+      }
     >
-      <ErrorBoundary fallback={<div className=" h-[calc(100vh-80px)]">{children}</div>}>
+      <ErrorBoundary
+        fallback={<div className=" h-[calc(100vh-var(--navbar-height))]">{children}</div>}
+      >
         <BackgroundImage>{children}</BackgroundImage>
       </ErrorBoundary>
     </Suspense>
