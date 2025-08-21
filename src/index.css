@@ -77,8 +77,6 @@
   --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
   --sidebar-border: oklch(0.923 0.003 48.717);
   --sidebar-ring: oklch(0.709 0.01 56.259);
-  /* custom properties */
-  --navbar-height: 80px;
 }
 
 .dark {
@@ -121,5 +119,41 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* flipo in animation */
+
+  .animate-flip-in {
+    animation: flip-in-hor-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @keyframes flip-in-hor-bottom {
+    0% {
+      transform: rotateX(80deg);
+      opacity: 0;
+    }
+    100% {
+      transform: rotateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* loader animation */
+
+  @keyframes animate-svg-stroke-1 {
+    0% {
+      stroke-dashoffset: 2715.102783203125px;
+      stroke-dasharray: 2715.102783203125px;
+    }
+    100% {
+      stroke-dashoffset: 1300.20556640625px;
+      stroke-dasharray: 2715.102783203125px;
+    }
+  }
+
+  .svg-elem-1 {
+    animation: animate-svg-stroke-1 2s ease-in-out infinite alternate;
   }
 }

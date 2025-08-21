@@ -17,7 +17,7 @@ export default function BackgroundImage({ children }: BannerContentProps) {
   }, [data.bannerUrl]);
 
   return (
-    <div className="relative w-full h-[calc(100vh-var(--navbar-height))] overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden">
       {/* Banner image */}
       <img
         src={data.bannerUrl}
@@ -30,7 +30,7 @@ export default function BackgroundImage({ children }: BannerContentProps) {
       {/* Overlay */}
       <div className="absolute inset-0" />
 
-      {/* Banner text */}
+      {/* Children text */}
       <div className="relative h-full">{children}</div>
     </div>
   );

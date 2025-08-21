@@ -1,7 +1,8 @@
 // import Loader from '@/components/Loader';
-import BackgroundImageContent from '@/layouts/components/backgroundImage/BackgroundImageContent';
+import { ScrollSnapPage } from '@/features/ScrollSnapPage';
+import { BackgroundImageContent } from '@/layouts/components/backgroundImage';
+import HeroHeading from '@/layouts/components/heroContent/HeroHeading';
 import { createLazyFileRoute } from '@tanstack/react-router';
-import { t } from 'i18next';
 
 export const Route = createLazyFileRoute('/')({
   component: Index,
@@ -9,19 +10,33 @@ export const Route = createLazyFileRoute('/')({
 
 function Index() {
   return (
-    <div>
-      <BackgroundImageContent>
-        <div className="w-full h-full flex justify-center items-end leading-widest font-extrabold flex-col pr-24">
-          <h1 className="text-[4rem] leading-none">
-            {t('for_camping')} & {t('for_adventure')} & {t('for_event')}
-          </h1>
-          <h1 className="text-[14em] leading-none">{t('glampis')}</h1>
-        </div>
-      </BackgroundImageContent>
-
-      <section className="text-center">
-        <h1 className="font-extrabold text-2xl  tracking-widest ">GLAMPIS</h1>
-      </section>
-    </div>
+    <ScrollSnapPage
+      sections={[
+        {
+          id: 'hero',
+          className: '',
+          content: (
+            <BackgroundImageContent>
+              <HeroHeading />
+            </BackgroundImageContent>
+          ),
+        },
+        {
+          id: 'about',
+          className: '',
+          content: <p className="max-w-xl text-center">About content…</p>,
+        },
+        {
+          id: 'services',
+          className: '',
+          content: <div>Services</div>,
+        },
+        {
+          id: 'contact',
+          className: '',
+          content: <div>Contact form goes here</div>,
+        },
+      ]}
+    />
   );
 }
