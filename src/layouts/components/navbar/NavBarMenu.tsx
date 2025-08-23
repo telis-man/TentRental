@@ -18,8 +18,24 @@ const NavBarMenu = () => {
           </Link>
         </NavigationMenuLink>
         <NavigationMenuLink asChild>
-          <Link to="/about" className="[&.active]:font-bold tracking-wide">
-            {t('about')}
+          <Link to="/gallery" className="[&.active]:font-bold tracking-wide">
+            {t('gallery')}
+          </Link>
+        </NavigationMenuLink>
+        <NavigationMenuLink asChild>
+          <Link to="/reservation" className="[&.active]:font-bold tracking-wide">
+            {t('reservation')}
+          </Link>
+        </NavigationMenuLink>
+        <NavigationMenuLink asChild>
+          <Link to="/tents" className="[&.active]:font-bold tracking-wide">
+            {t('tents')}
+          </Link>
+        </NavigationMenuLink>
+
+        <NavigationMenuLink asChild>
+          <Link to="/contacts" className="[&.active]:font-bold tracking-wide">
+            {t('contacts')}
           </Link>
         </NavigationMenuLink>
       </NavigationMenuList>

@@ -6,5 +6,9 @@
   "for_adventure": "Adventure",
   "for_event": "Event",
   "for_camping": "Camping",
-  "glampis": "glampis"
+  "glampis": "glampis",
+  "reservation": "Reservation",
+  "gallery": "Gallery ",
+  "tents": "Tents",
+  "contacts": "Contacts"
 }

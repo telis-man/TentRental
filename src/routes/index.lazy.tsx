@@ -14,7 +14,6 @@ function Index() {
       sections={[
         {
           id: 'hero',
-          className: '',
           content: (
             <BackgroundImageContent>
               <HeroHeading />
@@ -23,7 +22,6 @@ function Index() {
         },
         {
           id: 'about',
-          className: '',
           content: <p className="max-w-xl text-center">About content…</p>,
         },
         {
@@ -33,7 +31,6 @@ function Index() {
         },
         {
           id: 'contact',
-          className: '',
           content: <div>Contact form goes here</div>,
         },
       ]}
