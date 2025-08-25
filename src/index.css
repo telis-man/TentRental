@@ -120,13 +120,28 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  html,
+  body,
+  #root {
+    overflow-y: scroll; /* keep scrolling functional */
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  #root::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+    width: 0; /* sometimes needed for overlay scrollbars */
+  }
 }
 
 @layer utilities {
   /* flipo in animation */
 
   .animate-flip-in {
-    animation: flip-in-hor-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: flip-in-hor-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
   @keyframes flip-in-hor-bottom {

@@ -1,5 +1,6 @@
 // import Loader from '@/components/Loader';
 import { ScrollSnapPage } from '@/features/ScrollSnapPage';
+import { AboutSection } from '@/layouts/components/aboutSection';
 import { BackgroundImageContent } from '@/layouts/components/backgroundImage';
 import HeroHeading from '@/layouts/components/heroContent/HeroHeading';
 import { createLazyFileRoute } from '@tanstack/react-router';
@@ -22,7 +23,7 @@ function Index() {
         },
         {
           id: 'about',
-          content: <p className="max-w-xl text-center">About content…</p>,
+          content: <AboutSection />,
         },
         {
           id: 'services',

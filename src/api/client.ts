@@ -13,6 +13,5 @@ export async function fetchJson<T>(endpoint: string, options?: RequestInit): Pro
     const error = await res.text();
     throw new Error(error || 'Fetch failed');
   }
-
   return res.json();
 }

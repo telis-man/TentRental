@@ -1,5 +1,3 @@
-// import React from 'react';
-
 import { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import NavBarMenu from '../../../layouts/components/navbar/NavBarMenu';
@@ -8,7 +6,7 @@ import Logo from './Logo';
 
 function NavBar() {
   return (
-    <div className="flex items-center justify-between w-full p-4 px-8 fixed top-0 left-0 w-full z-50 bg-background">
+    <div className="flex items-center justify-between w-full p-4 px-8 fixed top-0 left-0 z-50 bg-background">
       <ErrorBoundary fallback={<div>Something went wrong while loading the logo.</div>}>
         <Suspense fallback={<div>Loading logo...</div>}>
           <Logo />

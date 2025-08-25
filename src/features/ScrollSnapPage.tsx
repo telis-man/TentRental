@@ -14,10 +14,10 @@ export function ScrollSnapPage({ sections }: ScrollSnapPageProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <div className="relative h-screen">
+    <div className="relative h-screen ">
       <div
         ref={containerRef}
-        className="h-full overflow-y-scroll snap-y snap-mandatory scroll-smooth"
+        className="h-full overflow-y-scroll snap-y snap-mandatory scroll-smooth  [&::-webkit-scrollbar]:hidden [&scrollbar-width:none] [&-ms-overflow-style:none]"
       >
         {sections.map((s) => (
           <section
