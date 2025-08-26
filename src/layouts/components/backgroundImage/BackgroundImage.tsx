@@ -17,13 +17,13 @@ export default function BackgroundImage({ children }: BannerContentProps) {
   }, [data.bannerUrl]);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden">
       {/* Banner image */}
       <img
         src={data.bannerUrl}
         alt="Banner"
         className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
-          loaded ? 'blur-0 opacity-100' : 'blur-xl opacity-50 '
+          loaded ? 'blur-0 opacity-70' : 'blur-xl opacity-50'
         }`}
       />
 
