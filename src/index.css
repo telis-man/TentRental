@@ -1,4 +1,6 @@
 @import './assets/fonts/styles/F37Judge.css';
+@import './assets/fonts/styles/Garamond.css';
+
 @import 'tailwindcss';
 
 @import 'tw-animate-css';
@@ -42,6 +44,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
   /* custom font import */
   --font-sans: 'F37 Judge', sans-serif;
+  --font-accent: 'EB Garamond', sans-serif;
 }
 
 :root {
@@ -138,6 +141,20 @@
 }
 
 @layer utilities {
+  /* main text animation */
+
+  .text-reveal {
+    display: inline-block;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    animation: revealUp 0.5s ease-out forwards;
+  }
+
+  @keyframes revealUp {
+    to {
+      transform: scaleY(1);
+    }
+  }
   /* flipo in animation */
 
   .animate-flip-in {
@@ -147,9 +164,11 @@
   @keyframes flip-in-hor-bottom {
     0% {
       transform: rotateX(80deg);
+      opacity: 0;
     }
     100% {
       transform: rotateX(0);
+      opacity: 1;
     }
   }
 

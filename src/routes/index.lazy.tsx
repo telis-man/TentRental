@@ -4,7 +4,7 @@ import { AboutSection } from '@/layouts/components/aboutSection';
 import { BackgroundImageContent } from '@/layouts/components/backgroundImage';
 import HeroHeading from '@/layouts/components/heroContent/HeroHeading';
 import { createLazyFileRoute } from '@tanstack/react-router';
-import { DimensionsSection } from '@/layouts/components/dimensionsSection';
+import ImagePreview from '@/layouts/components/imagePreviewSection/ImagePreview';
 
 export const Route = createLazyFileRoute('/')({
   component: Index,
@@ -27,12 +27,8 @@ function Index() {
           content: <AboutSection />,
         },
         {
-          id: 'dimensions',
-          content: <DimensionsSection />,
-        },
-        {
-          id: 'contact',
-          content: <div>Contact form goes here</div>,
+          id: 'galleryPreview',
+          content: <ImagePreview />,
         },
       ]}
     />

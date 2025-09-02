@@ -11,16 +11,12 @@ export default function AboutSection() {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="h-full grid grid-cols-2 w-full items-center" ref={ref}>
+    <div className="h-full grid grid-cols-2 w-full items-center " ref={ref}>
       {/* Left Section */}
       <div className="flex flex-col justify-center items-start w-1/2 mx-auto">
-        <h1
-          className={`text-8xl font-extrabold ${inView ? 'animate-flip-in opacity-100' : 'opacity-0'}`}
-        >
-          {t('about')}
-        </h1>
+        <h1 className={`text-8xl font-extrabold ${inView && 'text-reveal'}`}>{t('about')}</h1>
         <p
-          className={`text-2xl font-semibold text-justify ${inView ? 'animate-flip-in [animation-delay:0.5s!important]' : 'opacity-0'}`}
+          className={`text-4xl font-semibold text-justify ${inView && 'text-reveal [animation-delay:0.4s!important]'}`}
         >
           {t('about_description')}
         </p>

@@ -29,7 +29,7 @@ const NavBarMenu = () => {
         </NavigationMenuLink>
         <NavigationMenuLink asChild>
           <Link to="/tents" className="[&.active]:font-bold tracking-wide">
-            {t('tents')}
+            {t('about_tents')}
           </Link>
         </NavigationMenuLink>
 
