@@ -22,8 +22,8 @@ export default function BackgroundImage({ children }: BannerContentProps) {
       <img
         src={data.bannerUrl}
         alt="Banner"
-        className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
-          loaded ? 'blur-0 opacity-70' : 'blur-xl opacity-50'
+        className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 animate-zoom-in-out ${
+          loaded ? 'blur-0 opacity-40' : 'blur-xl opacity-50'
         }`}
       />
 
