@@ -1,5 +1,5 @@
 import { useBackgroundImage } from '@/layouts/hooks/useBackgroundImage';
-import { useEffect, useState, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
 interface BannerContentProps {
   children?: ReactNode;
@@ -7,28 +7,17 @@ interface BannerContentProps {
 
 export default function BackgroundImage({ children }: BannerContentProps) {
   const { data } = useBackgroundImage();
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    if (!data.bannerUrl) return;
-    const img = new Image();
-    img.src = data.bannerUrl;
-    img.onload = () => setLoaded(true);
-  }, [data.bannerUrl]);
 
   return (
-    <div className="relative w-full h-full overflow-hidden">
-      {/* Banner image */}
-      <img
+    <div className="relative w-full h-full  overflow-hidden">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
         src={data.bannerUrl}
-        alt="Banner"
-        className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 animate-zoom-in-out ${
-          loaded ? 'blur-0 opacity-40' : 'blur-xl opacity-50'
-        }`}
+        className="absolute inset-0 w-full h-full object-cover"
       />
-
-      {/* Overlay */}
-      <div className="absolute inset-0" />
 
       {/* Children text */}
       <div className="relative h-full">{children}</div>
