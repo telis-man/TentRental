@@ -1,26 +1,39 @@
 import { useBackgroundImage } from '@/layouts/hooks/useBackgroundImage';
-import { type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 
 interface BannerContentProps {
   children?: ReactNode;
+  setIsVideoLoaded: (loaded: boolean) => void;
 }
 
-export default function BackgroundImage({ children }: BannerContentProps) {
+export default function BackgroundImage({ children, setIsVideoLoaded }: BannerContentProps) {
   const { data } = useBackgroundImage();
+  const [isVideoLoaded, setIsVideoLoadedState] = useState(false);
+
+  useEffect(() => {
+    setIsVideoLoaded(isVideoLoaded);
+  }, [isVideoLoaded]);
 
   return (
     <div className="relative w-full h-full  overflow-hidden">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        src={data.bannerUrl}
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+      {data?.bannerUrl && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          onLoadedData={() => setIsVideoLoadedState(true)}
+          src={data.bannerUrl}
+          className={`
+                  absolute inset-0 w-full h-full object-cover
+            transition-opacity duration-1000 ease-in-out
+            ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}`}
+        />
+      )}
+      <div className="relative h-full">{children}</div>
+      {/* Loader on top */}
 
       {/* Children text */}
-      <div className="relative h-full">{children}</div>
     </div>
   );
 }

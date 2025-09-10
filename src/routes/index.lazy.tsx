@@ -1,11 +1,13 @@
 // import Loader from '@/components/Loader';
 import { ScrollSnapPage } from '@/features/ScrollSnapPage';
 import { AboutSection } from '@/layouts/components/aboutSection';
-import { BackgroundImageContent } from '@/layouts/components/backgroundImage';
+import { BackgroundImage } from '@/layouts/components/backgroundImage';
 import HeroHeading from '@/layouts/components/heroContent/HeroHeading';
 import { createLazyFileRoute } from '@tanstack/react-router';
 import ImagePreview from '@/layouts/components/imagePreviewSection/ImagePreview';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
+import Loader from '@/components/Loader';
 
 export const Route = createLazyFileRoute('/')({
   component: Index,
@@ -13,6 +15,8 @@ export const Route = createLazyFileRoute('/')({
 
 function Index() {
   const { t } = useTranslation();
+
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   return (
     <ScrollSnapPage
       sections={[
@@ -20,9 +24,16 @@ function Index() {
           id: 'hero',
           name: t('start'),
           content: (
-            <BackgroundImageContent>
-              <HeroHeading />
-            </BackgroundImageContent>
+            <>
+              {!isVideoLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black z-10">
+                  <Loader />
+                </div>
+              )}
+              <BackgroundImage setIsVideoLoaded={setIsVideoLoaded}>
+                {isVideoLoaded && <HeroHeading />}
+              </BackgroundImage>
+            </>
           ),
         },
         {

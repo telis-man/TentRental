@@ -89,7 +89,7 @@ export function ScrollSnapPage({ sections }: ScrollSnapPageProps) {
       {/* Sidebar nav */}
       <div className=" flex flex-col space-y-3 z-10 h-full justify-start items-center bg-background w-[16rem]">
         {sections.map((s) => (
-          <div className="flex">
+          <div key={s.id} className="flex">
             <button
               key={s.id}
               onClick={() => handleScrollTo(s.id)}
