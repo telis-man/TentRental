@@ -1,39 +1,5 @@
-// import { useRef, type ReactNode } from 'react';
-
-// export interface ScrollSection {
-//   id: string;
-//   content: ReactNode;
-//   className?: string;
-// }
-
-// interface ScrollSnapPageProps {
-//   sections: ScrollSection[];
-// }
-
-// export function ScrollSnapPage({ sections }: ScrollSnapPageProps) {
-//   const containerRef = useRef<HTMLDivElement | null>(null);
-
-//   return (
-//     <div className="relative h-screen ">
-//       <div
-//         ref={containerRef}
-//         className="h-full overflow-y-scroll snap-y snap-mandatory scroll-smooth  [&::-webkit-scrollbar]:hidden [&scrollbar-width:none] [&-ms-overflow-style:none]"
-//       >
-//         {sections.map((s) => (
-//           <section
-//             key={s.id}
-//             id={s.id}
-//             className={`h-screen snap-start flex items-center justify-center ${s.className ?? ''}`}
-//           >
-//             {s.content}
-//           </section>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
 import { useRef, type ReactNode, useState, useEffect } from 'react';
+import { SideBar } from './SideBar';
 
 export interface ScrollSection {
   id: string;
@@ -85,28 +51,11 @@ export function ScrollSnapPage({ sections }: ScrollSnapPageProps) {
   };
 
   return (
-    <div className="relative h-screen flex">
+    <div className="h-screen flex">
       {/* Sidebar nav */}
-      <div className=" flex flex-col space-y-3 z-10 h-full justify-start items-center bg-background w-[16rem]">
-        {sections.map((s) => (
-          <div key={s.id} className="flex">
-            <button
-              key={s.id}
-              onClick={() => handleScrollTo(s.id)}
-              // className={`w-3 h-3 rounded-full transition-colors ${
-              //   activeId === s.id ? 'bg-white' : 'bg-gray-400'
-              // }`}
-              className="flex text-4xl font-extrabold"
-              aria-label={s.label ?? s.id}
-            >
-              {activeId === s.id && (
-                <p className="text-yellow-400 text-4xl font-extrabold mr-6">_</p>
-              )}
-              {s.name}
-            </button>
-          </div>
-        ))}
-      </div>
+
+      <SideBar activeId={activeId} handleScrollTo={handleScrollTo} sections={sections} />
+
       {/* Scroll container */}
       <div
         ref={containerRef}

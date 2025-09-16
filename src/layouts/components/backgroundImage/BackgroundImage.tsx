@@ -15,7 +15,7 @@ export default function BackgroundImage({ children, setIsVideoLoaded }: BannerCo
   }, [isVideoLoaded]);
 
   return (
-    <div className="relative w-full h-full  overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden">
       {data?.bannerUrl && (
         <video
           autoPlay

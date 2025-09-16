@@ -151,7 +151,6 @@
   /* main text animation */
 
   .text-reveal {
-    display: inline-block;
     transform: scaleY(0);
     transform-origin: bottom;
     animation: revealUp 0.5s ease-out forwards;
@@ -201,6 +200,36 @@
     }
     50% {
       transform: scale(1.1); /* adjust zoom strength */
+    }
+  }
+
+  /* sidebar in */
+  .animate-sidebar-appear {
+    animation: sidebarAppear 0.8s ease-out forwards;
+  }
+
+  @keyframes sidebarAppear {
+    0% {
+      transform: translateX(-100%);
+      /* opacity: 0; */
+    }
+    100% {
+      transform: translateX(0);
+      /* opacity: 0.8; */
+    }
+  }
+
+  /* side reveal */
+
+  .animate-side-reveal {
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: revealUp 0.5s ease-out forwards;
+  }
+
+  @keyframes revealUp {
+    to {
+      transform: scaleX(1);
     }
   }
 }

@@ -8,6 +8,7 @@ import ImagePreview from '@/layouts/components/imagePreviewSection/ImagePreview'
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import Loader from '@/components/Loader';
+import CheckAvailabilitySection from '@/layouts/components/checkAvailabilitySection/CheckAvailabilitySection';
 
 export const Route = createLazyFileRoute('/')({
   component: Index,
@@ -26,7 +27,7 @@ function Index() {
           content: (
             <>
               {!isVideoLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black z-10">
+                <div className="absolute inset-0 flex items-center justify-center bg-background z-10">
                   <Loader />
                 </div>
               )}
@@ -47,6 +48,12 @@ function Index() {
           name: t('tent_in_action'),
 
           content: <ImagePreview />,
+        },
+        {
+          id: 'checkAvailability',
+          name: t('check_availability'),
+
+          content: <CheckAvailabilitySection />,
         },
       ]}
     />

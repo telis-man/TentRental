@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useAboutImage } from '@/layouts/hooks/useAboutImage';
 import { BlurhashCanvas } from 'react-blurhash';
 import { useState } from 'react';
+import { cn } from '@/lib/utils';
 
 export default function AboutSection() {
   const { t } = useTranslation();
@@ -11,15 +12,25 @@ export default function AboutSection() {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="h-full grid grid-cols-2 w-full items-center " ref={ref}>
+    <div className="mt-26 h-full grid grid-cols-2 w-full items-center " ref={ref}>
       {/* Left Section */}
-      <div className="flex flex-col justify-center items-start w-1/2 mx-auto">
-        <h1 className={`text-8xl font-extrabold ${inView && 'text-reveal'}`}>{t('about')}</h1>
+      <div className="relative flex flex-col justify-center items-start w-3/5 mx-auto">
+        <h1
+          className={`text-8xl font-extrabold z-5 ${inView && 'text-reveal [animation-delay:0.4s!important]'}`}
+        >
+          {t('about')}
+        </h1>
         <p
-          className={`text-4xl font-semibold text-justify ${inView && 'text-reveal [animation-delay:0.4s!important]'}`}
+          className={` text-4xl font-semibold text-justify ${inView && 'text-reveal [animation-delay:0.8s!important]'}`}
         >
           {t('about_description')}
         </p>
+        <div
+          className={cn(
+            'bg-yellow-400 h-14  w-48 absolute top-8 left-4 z-4',
+            inView && 'animate-side-reveal [animation-delay:1.2s!important]'
+          )}
+        ></div>
       </div>
 
       {/* Right Section */}
