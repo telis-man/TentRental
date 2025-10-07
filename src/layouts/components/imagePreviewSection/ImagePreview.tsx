@@ -15,11 +15,11 @@ export default function ImagePreview() {
       className="h-full w-full flex flex-col gap-12 items-start justify-center px-42 pt-26 pb-12"
     >
       <div className="flex flex-col gap-4 mt-14 max-w-1/3">
-        <h1 className={`text-[6rem] leading-none font-semibold ${inView && 'text-reveal'} `}>
+        <h1 className={` text-[6rem] leading-none font-semibold ${inView && 'text-reveal'} `}>
           <Trans i18nKey="image_prieview_title" components={{ italic: <i /> }} />{' '}
         </h1>
         <p
-          className={`text-4xl text-justify ${inView && 'text-reveal [animation-delay:0.4s!important]'}`}
+          className={`font-accent text-4xl text-justify ${inView && 'text-reveal [animation-delay:0.4s!important]'}`}
         >
           <Trans
             i18nKey="image_preview_subtitle"

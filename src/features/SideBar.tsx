@@ -9,12 +9,12 @@ interface SideBarProps {
 export function SideBar({ activeId, handleScrollTo, sections }: SideBarProps) {
   return (
     <div
-      className={`absolute z-10 h-full bg-background animate-sidebar-appear transition-all duration-800 bg-background/80
-                ${activeId === 'hero' ? 'w-2/7' : 'w-20'}
+      className={`group absolute z-10 h-full animate-sidebar-appear transition-all
+                ${activeId === 'hero' ? 'w-2/7' : 'w-20 hover:w-2/7 hover:bg-background/80 hover:text-foreground'}
           `}
     >
       <div
-        className={`w-full transition-all duration-800 space-y-6 absolute bottom-0 right-0 p-8
+        className={`w-full transition-all space-y-6 absolute bottom-0 right-0 p-8 
               `}
       >
         {sections.map((s) => (
@@ -22,16 +22,18 @@ export function SideBar({ activeId, handleScrollTo, sections }: SideBarProps) {
             <button
               key={s.id}
               onClick={() => handleScrollTo(s.id)}
-              className="flex text-7xl font-extrabold cursor-pointer opacity-90 hover:opacity-100"
+              className={`flex text-7xl ${activeId === 'hero' ? 'text-background' : 'text-foreground'} font-extrabold cursor-pointer`}
               aria-label={s.label ?? s.id}
             >
-              <div className="transition-all duration-800  h-full flex items-end mr-4">
+              <div className="transition-all h-full flex items-end mr-4">
                 <div
-                  className={`transition-all duration-800 w-16 h-4 rounded ${activeId !== 'hero' && 'h-4 '} ${activeId === s.id ? 'bg-yellow-400' : `${activeId === 'hero' ? 'w-0' : 'bg-foreground'}`}`}
+                  className={`transition-all w-16 h-4 rounded ${activeId !== 'hero' && 'h-4 '} ${activeId === s.id ? 'bg-yellow-400' : `${activeId === 'hero' ? 'w-0' : 'bg-foreground'}`}`}
                 />
               </div>
               <p
-                className={`w-auto transition-all duration-800 leading-13 text-end whitespace-nowrap origin-left  ${activeId !== 'hero' && 'scale-x-0'}`}
+                className={`w-auto transition-all leading-13 text-end whitespace-nowrap origin-left ${
+                  activeId !== 'hero' && 'scale-x-0 group-hover:scale-x-100'
+                }`}
               >
                 {s.name}
               </p>
