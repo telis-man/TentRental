@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('../EBGaramond.ttf'); /* For IE9 Compat Modes */
+  src:
+    local('EB Garamond'),
+    local('EBGaramond'),
+    url('../EBGaramond.ttf') format('truetype');
+  font-weight: 400; /* You can adjust if this is a bold or light variant */
+  font-style: normal;
+}

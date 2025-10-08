@@ -1,11 +1,12 @@
 @import './assets/fonts/styles/F37Judge.css';
+@import './assets/fonts/styles/Garamond.css';
+
 @import 'tailwindcss';
+
 @import 'tw-animate-css';
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: 'F37 Judge', sans-serif;
-  /* --font-f37judge: F37 Judge Extended, 'sans-serif'; */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -41,12 +42,15 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  /* custom font import */
+  --font-sans: 'F37 Judge', sans-serif;
+  --font-accent: 'EB Garamond', sans-serif;
 }
 
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.147 0.004 49.25);
+  --foreground: hsl(20, 14%, 4%);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.147 0.004 49.25);
   --popover: oklch(1 0 0);
@@ -79,7 +83,8 @@
 }
 
 .dark {
-  --background: oklch(0.147 0.004 49.25);
+  /* --background: oklch(0.147 0.004 49.25); */
+  --background: #181818;
   --foreground: oklch(0.985 0.001 106.423);
   --card: oklch(0.216 0.006 56.043);
   --card-foreground: oklch(0.985 0.001 106.423);
@@ -113,10 +118,118 @@
 }
 
 @layer base {
+  .font-outline-2 {
+    -webkit-text-stroke: 2px white;
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 4px white;
+  }
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  html,
+  body,
+  #root {
+    overflow-y: scroll; /* keep scrolling functional */
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  #root::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+    width: 0; /* sometimes needed for overlay scrollbars */
+  }
+}
+
+@layer utilities {
+  /* main text animation */
+
+  .text-reveal {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    animation: revealUp 0.5s ease-out forwards;
+  }
+
+  @keyframes revealUp {
+    to {
+      transform: scaleY(1);
+    }
+  }
+
+  /* loader animation */
+
+  @keyframes animate-svg-stroke-1 {
+    0% {
+      stroke-dashoffset: 2715.102783203125px;
+      stroke-dasharray: 2715.102783203125px;
+    }
+    100% {
+      stroke-dashoffset: 1300.20556640625px;
+      stroke-dasharray: 2715.102783203125px;
+    }
+  }
+
+  .svg-elem-1 {
+    animation: animate-svg-stroke-1 2s ease-in-out infinite alternate;
+  }
+
+  /* hover effect  */
+
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .hover-lift:hover {
+    transform: translateY(-0.25rem) scale(1.02);
+  }
+
+  /* zoom in out effect */
+  .animate-zoom-in-out {
+    animation: zoomInOut 30s ease-in-out infinite;
+  }
+
+  @keyframes zoomInOut {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1); /* adjust zoom strength */
+    }
+  }
+
+  /* sidebar in */
+  .animate-sidebar-appear {
+    animation: sidebarAppear 0.8s ease-out forwards;
+  }
+
+  @keyframes sidebarAppear {
+    0% {
+      transform: translateX(-100%);
+      /* opacity: 0; */
+    }
+    100% {
+      transform: translateX(0);
+      /* opacity: 0.8; */
+    }
+  }
+
+  /* side reveal */
+
+  .animate-side-reveal {
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: revealUp 0.5s ease-out forwards;
+  }
+
+  @keyframes revealUp {
+    to {
+      transform: scaleX(1);
+    }
   }
 }

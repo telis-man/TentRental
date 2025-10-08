@@ -1,5 +1,6 @@
 // import { useSuspenseQuery } from '@tanstack/react-query';
-// import { Link } from '@tanstack/react-router';
+import { Link } from '@tanstack/react-router';
+import { t } from 'i18next';
 
 const Logo = () => {
   // const API_ENDPOINT_URL = 'http://localhost:3000/logoImage';
@@ -23,7 +24,9 @@ const Logo = () => {
     // <Link to="/" className="[&.active]:font-bold">
     //   <img src={data.logoUrl} alt="Galampis logo" className="h-15" />
     // </Link>
-    <h1 className="text-4xl font-extrabold tracking-wide">GLAMPIS</h1>
+    <Link to="/" className="[&.active]:font-bold">
+      <h1 className="text-4xl font-extrabold tracking-wide">{t('glampis')}</h1>
+    </Link>
   );
 };
 

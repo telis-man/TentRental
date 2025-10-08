@@ -1,6 +1,26 @@
 {
   "home": "Pagrindinis",
-  "about": "Apie mus",
+  "about_us": "Apie mus",
+  "about": "Apie",
+
   "lt": "LT",
-  "en": "EN"
+  "en": "EN",
+  "for_adventure": "Nuotykiui",
+  "for_event": "Šventei",
+  "for_camping": "Stovyklavimui",
+  "glampis": "glampis",
+  "reservation": "Rezervacija",
+  "gallery": "Galerija",
+  "tents": "Palapinės",
+  "about_tents": "Apie Palapines",
+  "contacts": "Kontaktai",
+  "about_description": "Mūsų 5 m skersmens glamping palapinė – puikus pasirinkimas festivaliams ar šeimos išvykoms. Joje patogiai gali apsistoti 4–8 žmonės, o erdvi ir jauki aplinka suteikia išskirtinę patirtį. Pagaminta iš aukštos kokybės, vandeniui atsparios medžiagos, todėl užtikrina komfortą bet kokiomis oro sąlygomis. Galite rinktis pilną paslaugą su pastatymu ir išrinkimu arba pasirūpinti tuo patys. Nesvarbu, ar planuojate išvyką gamtoje, ar ieškote papildomos erdvės savo renginiui – glamping palapinė yra unikalus ir patikimas sprendimas.",
+  "space_for_every_occasion": "Erdvė visoms progoms",
+  "capacity_with_sleeping_bags": "Erdvė užpildant miegmaišiais",
+  "capacity_with_beds": "Erdvė užpildant lovomis",
+  "image_prieview_title": "Jūsų poilsio <italic>akimirka</italic>",
+  "image_preview_subtitle": "Pamatykite, kaip atrodo mūsų palapinių jaukumas gamtos apsuptyje. Daugiau akimirkų – <0>galerijoje</0>.",
+  "start": "Pradžia",
+  "tent_in_action": "Kaip tai atrodo?",
+  "check_availability": "Tikrinti užimtumą"
 }
