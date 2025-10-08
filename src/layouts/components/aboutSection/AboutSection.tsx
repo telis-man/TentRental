@@ -12,9 +12,9 @@ export default function AboutSection() {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="mt-26 h-full grid grid-cols-5 w-full items-center " ref={ref}>
+    <div className="mt-26 h-full grid grid-cols-2 w-full items-center gap-26" ref={ref}>
       {/* Left Section */}
-      <div className="relative flex flex-col justify-center items-start w-3/5 mx-auto col-span-2">
+      <div className="relative flex flex-col justify-center items-start w-3/5 ml-auto">
         <h1
           className={`text-8xl font-extrabold z-5 ${inView && 'text-reveal [animation-delay:0.4s!important]'}`}
         >
@@ -43,7 +43,7 @@ export default function AboutSection() {
         )}
       </div> */}
 
-      <div className="relative flex items-center justify-start p-8 col-span-3 h-full w-4/5 object-cover overflow-hidden">
+      <div className="relative flex items-center justify-start h-full w-4/5 object-cover overflow-hidden">
         {!loaded && (
           <BlurhashCanvas
             hash={data.blurHash}
