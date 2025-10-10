@@ -11,7 +11,7 @@ function RouteComponent() {
   console.log('data', data);
 
   return (
-    <div className="grid grid-cols-3 gap-6 p-4 mt-32">
+    <div className="grid grid-cols-3 gap-10 p-10 mt-32">
       {data.map((img) => (
         <ImageItem
           key={img.hash}

@@ -16,7 +16,7 @@ export default function CheckAvailabilitySection() {
           Patikrink užimtumą kalendoriuje
         </h1>
         <h1 className="text-4xl ">Radai laisvą laiką?</h1>
-        <h2 className="text-4xl  underline cursor-pointer mt-6">
+        <h2 className="text-4xl underline cursor-pointer mt-6">
           Rezervuok <i>gamping</i> palapinę savo šventei
         </h2>
       </div>
