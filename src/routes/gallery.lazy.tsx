@@ -1,3 +1,4 @@
+import Gallery from '@/layouts/components/gallery/Gallery';
 import { createLazyFileRoute } from '@tanstack/react-router';
 
 export const Route = createLazyFileRoute('/gallery')({
@@ -5,5 +6,5 @@ export const Route = createLazyFileRoute('/gallery')({
 });
 
 function RouteComponent() {
-  return <div>Hello "/gallery"!</div>;
+  return (<Gallery />);
 }

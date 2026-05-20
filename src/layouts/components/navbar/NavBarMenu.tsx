@@ -32,6 +32,11 @@ const NavBarMenu = () => {
             {t('about_tents')}
           </Link>
         </NavigationMenuLink>
+        <NavigationMenuLink asChild>
+          <Link to="/prices" className="[&.active]:font-bold tracking-wide">
+            {t('prices')}
+          </Link>
+        </NavigationMenuLink>
 
         <NavigationMenuLink asChild>
           <Link to="/contacts" className="[&.active]:font-bold tracking-wide">

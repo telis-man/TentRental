@@ -2,7 +2,6 @@
   "home": "Home",
   "about_us": "About us",
   "about": "About",
-
   "lt": "LT",
   "en": "EN",
   "for_adventure": "Adventure",
@@ -13,7 +12,7 @@
   "gallery": "Gallery ",
   "tents": "Tents",
   "about_tents": "About Tents",
-
+  "prices": "Prices",
   "contacts": "Contacts",
   "about_description": "Our 5m bell tent is the perfect choice for festivals, or family getaways. The tent comfortably fits from 4 to 8 people and offers a spacious, cozy atmosphere. Made from high-quality, water-resistant canvas, it keeps you dry and comfortable in any weather. You can choose full service with setup and takedown included, or rent the tent only if you prefer to handle it yourself. Whether you’re planning a stylish glamping experience or extra space for your event, our bell tent is a unique and reliable option.",
   "space_for_every_occasion": "Space for Every Occasion",
@@ -22,7 +21,6 @@
   "image_prieview_title": "A Glimpse Into Your <italic>Stay</italic>",
   "image_preview_subtitle": "Discover the comfort and charm of our tents—where nature meets luxury. See more in the full <0>gallery</0>.",
   "start": "Home",
-
   "tent_in_action": "Tent in action",
   "check_availability": "Check availability"
 }

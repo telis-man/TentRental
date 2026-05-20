@@ -11,11 +11,13 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PricesRouteImport } from './routes/prices'
 
 const TentsLazyRouteImport = createFileRoute('/tents')()
 const ReservationLazyRouteImport = createFileRoute('/reservation')()
 const GalleryLazyRouteImport = createFileRoute('/gallery')()
 const ContactsLazyRouteImport = createFileRoute('/contacts')()
+const AdminLazyRouteImport = createFileRoute('/admin')()
 const IndexLazyRouteImport = createFileRoute('/')()
 
 const TentsLazyRoute = TentsLazyRouteImport.update({
@@ -38,6 +40,16 @@ const ContactsLazyRoute = ContactsLazyRouteImport.update({
   path: '/contacts',
   getParentRoute: () => rootRouteImport,
 } as any).lazy(() => import('./routes/contacts.lazy').then((d) => d.Route))
+const AdminLazyRoute = AdminLazyRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() => import('./routes/admin.lazy').then((d) => d.Route))
+const PricesRoute = PricesRouteImport.update({
+  id: '/prices',
+  path: '/prices',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexLazyRoute = IndexLazyRouteImport.update({
   id: '/',
   path: '/',
@@ -46,6 +58,8 @@ const IndexLazyRoute = IndexLazyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
+  '/prices': typeof PricesRoute
+  '/admin': typeof AdminLazyRoute
   '/contacts': typeof ContactsLazyRoute
   '/gallery': typeof GalleryLazyRoute
   '/reservation': typeof ReservationLazyRoute
@@ -53,6 +67,8 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
+  '/prices': typeof PricesRoute
+  '/admin': typeof AdminLazyRoute
   '/contacts': typeof ContactsLazyRoute
   '/gallery': typeof GalleryLazyRoute
   '/reservation': typeof ReservationLazyRoute
@@ -61,6 +77,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexLazyRoute
+  '/prices': typeof PricesRoute
+  '/admin': typeof AdminLazyRoute
   '/contacts': typeof ContactsLazyRoute
   '/gallery': typeof GalleryLazyRoute
   '/reservation': typeof ReservationLazyRoute
@@ -68,14 +86,38 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contacts' | '/gallery' | '/reservation' | '/tents'
+  fullPaths:
+    | '/'
+    | '/prices'
+    | '/admin'
+    | '/contacts'
+    | '/gallery'
+    | '/reservation'
+    | '/tents'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contacts' | '/gallery' | '/reservation' | '/tents'
-  id: '__root__' | '/' | '/contacts' | '/gallery' | '/reservation' | '/tents'
+  to:
+    | '/'
+    | '/prices'
+    | '/admin'
+    | '/contacts'
+    | '/gallery'
+    | '/reservation'
+    | '/tents'
+  id:
+    | '__root__'
+    | '/'
+    | '/prices'
+    | '/admin'
+    | '/contacts'
+    | '/gallery'
+    | '/reservation'
+    | '/tents'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
+  PricesRoute: typeof PricesRoute
+  AdminLazyRoute: typeof AdminLazyRoute
   ContactsLazyRoute: typeof ContactsLazyRoute
   GalleryLazyRoute: typeof GalleryLazyRoute
   ReservationLazyRoute: typeof ReservationLazyRoute
@@ -112,6 +154,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactsLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prices': {
+      id: '/prices'
+      path: '/prices'
+      fullPath: '/prices'
+      preLoaderRoute: typeof PricesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -124,6 +180,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
+  PricesRoute: PricesRoute,
+  AdminLazyRoute: AdminLazyRoute,
   ContactsLazyRoute: ContactsLazyRoute,
   GalleryLazyRoute: GalleryLazyRoute,
   ReservationLazyRoute: ReservationLazyRoute,

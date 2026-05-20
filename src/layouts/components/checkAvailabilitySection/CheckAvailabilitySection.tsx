@@ -7,8 +7,9 @@ export default function CheckAvailabilitySection() {
   const currentLang = i18n.language;
 
   const [date, setDate] = React.useState<Date | undefined>(new Date());
-  const bookedDates = Array.from({ length: 12 }, (_, i) => new Date(2025, 9, 15 + i));
+  const bookedDates = Array.from({ length: 7 }, (_, i) => new Date(2026, 5, 15 + i));
   console.log(' bookedDates: ', bookedDates);
+
   return (
     <div className="flex gap-20">
       <div className="flex flex-col gap-2 justify-start items-end pb-2">
@@ -21,6 +22,7 @@ export default function CheckAvailabilitySection() {
         </h2>
       </div>
       <Calendar
+
         mode="single"
         defaultMonth={date}
         classNames={{}}

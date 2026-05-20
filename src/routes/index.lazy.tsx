@@ -9,6 +9,9 @@ import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import Loader from '@/components/Loader';
 import CheckAvailabilitySection from '@/layouts/components/checkAvailabilitySection/CheckAvailabilitySection';
+import Prices from '@/layouts/components/prices/Prices';
+import { Dimensions } from '@/layouts/components/dimensions';
+import Gallery from '@/layouts/components/gallery/Gallery';
 
 export const Route = createLazyFileRoute('/')({
   component: Index,
@@ -38,23 +41,36 @@ function Index() {
           ),
         },
         {
-          id: 'about',
-          name: t('about_us'),
+          id: 'about_tents',
+          name: t('about_tents'),
 
-          content: <AboutSection />,
+          content: <Dimensions />,
         },
         {
-          id: 'galleryPreview',
-          name: t('tent_in_action'),
+          id: 'prices',
+          name: t('prices'),
 
-          content: <ImagePreview />,
+          content: <Prices />,
         },
         {
-          id: 'checkAvailability',
-          name: t('check_availability'),
+          id: 'reservation',
+          name: t('reservation'),
 
-          content: <CheckAvailabilitySection />,
+          content: <div>RESERVATION</div>,
         },
+        {
+          id: 'gallery',
+          name: t('gallery'),
+
+          content: <Gallery />,
+        },
+        {
+          id: 'contacts',
+          name: t('contacts'),
+
+          content: <>Contacts</>,
+        },
+
       ]}
     />
   );

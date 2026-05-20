@@ -25,7 +25,7 @@ const Logo = () => {
     //   <img src={data.logoUrl} alt="Galampis logo" className="h-15" />
     // </Link>
     <Link to="/" className="[&.active]:font-bold">
-      <h1 className="text-4xl font-extrabold tracking-wide">{t('glampis')}</h1>
+      <h1 className="text-6xl font-extrabold tracking-narrow text-background">{t('glampis')}</h1>
     </Link>
   );
 };
